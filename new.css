@@ -12,7 +12,7 @@
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background-image: url(./images/sky.jpg);
+  background-image: url(/sky.jpg);
   background-size: cover;
 }
 

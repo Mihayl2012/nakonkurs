@@ -1,86 +1,311 @@
-/* Общие стили */
 body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-header {
-    background-color: #0e8c5f;
-    color: #fff;
-    padding: 20px;
+    height: 100vh;
+    background: linear-gradient(to top, #0b0b0b 0%, #001122 70%);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .star {
+    position: absolute;
+    background: white;
+    opacity: 0.8;
+    animation: twinkle 2s infinite ease-in-out alternate;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  
+  @keyframes twinkle {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+  }
+  
+  .center-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-}
-
-header h1 {
-    font-size: 3em;
-    margin: 0;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Стиль для секций */
-section {
-    padding: 20px;
-    margin: 20px 0;
-}
-
-section h2 {
-    font-size: 2em;
+  }
+  
+  .ufo {
+    position: relative;
+    width: 200px;
+    height: 60px;
+    background: linear-gradient(to top, #aaa, #ddd);
+    border-radius: 100px / 30px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
     margin-bottom: 20px;
-}
-
-section p, section ul {
-    font-size: 1.2em;
-}
-
-/* Картинка в главной */
-.intro img {
-    width: 100%;
-    max-width: 400px;
-    display: block;
-    margin: 0 auto 20px;
-}
-
-/* Кнопка скачивания */
-.download-btn {
-    background-color: #0e8c5f;
+  }
+  
+  .ufo::before {
+    content: '';
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 50px;
+    background: rgba(180, 220, 255, 0.7);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  .ufo::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 20px;
+    background: rgba(0, 255, 255, 0.15);
+    border-radius: 50%;
+    filter: blur(5px);
+  }
+  
+  .alien {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 40px;
+    background: #66ff66;
+    border-radius: 50% 50% 45% 45%;
+  }
+  
+  .alien::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    width: 6px;
+    height: 10px;
+    background: #66ff66;
+    border-radius: 50%;
+    box-shadow: 0 -10px 0 #66ff66;
+  }
+  
+  .alien .eye {
+    position: absolute;
+    top: 10px;
+    width: 6px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+  }
+  
+  .alien .eye.left {
+    left: 6px;
+  }
+  
+  .alien .eye.right {
+    right: 6px;
+  }
+  
+  .fly-button {
+    background-color: #0066cc;
     color: white;
+    font-size: 18px;
     padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1.5em;
+    border: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.download-btn:hover {
-    background-color: #095c41;
-}
-
-/* Футер */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-}
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .fly-button:hover {
+    background-color: #005bb5;
+  }
+  
+  .beam {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 60px;
+    width: 80px;
+    height: 200px;
+    background: radial-gradient(ellipse at top, rgba(0, 255, 255, 0.4), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+  }
+  
+  .beam.active {
+    opacity: 1;
+  }
+  
+  .flying-ufo {
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(to top, #aaa, #ddd);
+    border-radius: 100px / 30px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    z-index: 5;
+    animation: fly 10s infinite linear;
+    bottom: 100px;
+    animation-play-state: paused;
+  }
+  
+  .flying-ufo::before {
+    content: '';
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 40px;
+    background: rgba(180, 220, 255, 0.7);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  @keyframes fly {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+      left: -200px;
+      top: 10%;
+    }
+    25% {
+      left: 25%;
+      top: 30%;
+    }
+    50% {
+      left: 50%;
+      top: 10%;
+    }
+    75% {
+      left: 75%;
+      top: 30%;
+    }
+    100% {
+      left: 100%;
+      top: 10%;
+    }
+  }
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to top, #0b0b0b 0%, #001122 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #ff66ff;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    z-index: 10; /* Поднимем кнопку над тарелкой */
+  }
+  
+  .ufo {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    background: linear-gradient(to top, #aaa, #ddd);
+    border-radius: 100px / 30px;
+    animation: rotateAroundButton 10s infinite linear;
+    z-index: 5;
+    transform-origin: 50% -100px; /* Центр вращения - кнопка */
+  }
+  
+  @keyframes rotateAroundButton {
+    0% {
+      transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+  }
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to top, #0b0b0b 0%, #001122 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #ff66ff;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    z-index: 10; /* Поднимем кнопку над тарелкой */
+  }
+  
+  .ufo {
+    position: absolute;
+    width: 120px; /* Увеличиваем ширину тарелки */
+    height: 40px; /* Увеличиваем высоту тарелки */
+    background: linear-gradient(to top, #aaa, #ddd);
+    border-radius: 100px / 30px;
+    animation: rotateAroundButton 10s infinite linear;
+    z-index: 5;
+    transform-origin: 50% -120px; /* Центр вращения - кнопка */
+  }
+  
+  .ufo::before {
+    content: '';
+    position: absolute;
+    top: -25px; /* Двигаем верхнюю часть тарелки вниз */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 50px;
+    background: rgba(180, 220, 255, 0.7);
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  .ufo::after {
+    content: '';
+    position: absolute;
+    bottom: -15px; /* Увеличиваем нижнюю часть */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px; /* Увеличиваем ширину нижней части */
+    height: 30px; /* Увеличиваем высоту нижней части */
+    background: rgba(0, 255, 255, 0.15);
+    border-radius: 50%;
+    filter: blur(5px);
+  }
+  
+  @keyframes rotateAroundButton {
+    0% {
+      transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+  }
+  

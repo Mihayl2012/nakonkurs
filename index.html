@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Майнкрафт</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Полетели</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Майнкрафт</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О игре</a></li>
-                <li><a href="features.html">Особенности</a></li>
-                <li><a href="download.html">Скачать</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="intro">
-        <img src="images/logo.png" alt="Minecraft Logo">
-        <h2>Погрузитесь в мир Minecraft!</h2>
-        <p>Строительство, выживание, приключения и много других возможностей ждут вас в Minecraft.</p>
-        <p>всего за 10.99$</p>
-        <p>в комплекте с bedrock edition</p>
-        <p>поблагодорим наших спонсоров а именно</p>
-        <p><a href="https://ru.wikipedia.org">Википедию</a></p>
-        <p>спасибо им за всю информацию</p> 
-        <!-- и немного чату gpt -->
-    </section>
+  <!-- Генерация звёзд -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      for (let i = 0; i < 80; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        const size = Math.random() * 4 + 2;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.animationDuration = `${1.5 + Math.random() * 2}s`;
+        document.body.appendChild(star);
+      }
+    });
+  </script>
 
-    <footer>
-        <p>&copy; 2025 Minecraft - Все права защищены, mykhail corpareition</p>
-    </footer>
+
+
+
+  <!-- Центральная кнопка и НЛО -->
+  <div class="center-container">
+    <div class="ufo">
+      <div class="alien"></div>
+    </div>
+    <a href="about.html"><button class="fly-button">Полетели</button></a>
+    <div class="beam"></div>
+  </div>
+
+  <!-- Летающие тарелки -->
+  <div class="flying-ufo" style="animation-delay: 0s;">
+    <div class="alien-in-ufo">
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+    </div>
+  </div>
+
 </body>
 </html>

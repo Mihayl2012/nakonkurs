@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap");
+:root {
+  --url: url(images/cola.png);
+  --left: 0px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: url(./images/sky.jpg);
+  background-size: cover;
+}
+
+header {
+  padding-top: 4vw;
+  padding-left: 4vw;
+}
+
+header h1 {
+  font-family: "Karantina", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 12vw;
+  color: chocolate;
+  /* mix-blend-mode: difference; */
+}
+
+.product {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.soda {
+  background: var(--url) var(--left), url(./images/mockup.png) 0 0;
+  background-size: 100%;
+  width: 20vh;
+  /* height: 260px; */
+  aspect-ratio: 2 / 3.84;
+  position: absolute;
+  bottom: -2vh;
+  background-blend-mode: multiply;
+  mask-image: url(./images/mockup.png);
+  mask-size: auto 100%;
+  transition: 0.8s;
+}
+
+.soda:nth-child(2) {
+  opacity: 0;
+}
+
+.product:hover {
+  bottom: 300px;
+}
+
+.product:hover .soda:nth-child(2) {
+    opacity: 1;
+    --left: 600px;
+  }
+  
+  .product:hover .soda:nth-child(1) {
+    opacity: 0;
+    --left: 600px;
+  }

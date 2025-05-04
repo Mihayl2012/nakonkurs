@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to top, #0b0b0b 0%, #001122 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#gameArea {
+    position: relative;
+    width: 1200px;
+    height: 800px;
+    background-color: #000;
+    border: 2px solid #fff;
+    overflow: hidden;
+}
+
+.ufo {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(to top, #aaa, #ddd);
+    border-radius: 100px / 30px;
+    z-index: 5;
+}
+
+.ufo::before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 50px;
+    background: rgba(180, 220, 255, 0.7);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.ufo::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 30px;
+    background: rgba(0, 255, 255, 0.15);
+    border-radius: 50%;
+    filter: blur(5px);
+}
+
+/* Параметры тарелки, которую преследуем */
+#target {
+    top: 100px;
+    left: 100px;
+}
+
+/* Стили для звезд */
+#stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    opacity: 0.8;
+    animation: twinkle 2s infinite ease-in-out alternate;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* Анимация мерцания звезд */
+@keyframes twinkle {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}

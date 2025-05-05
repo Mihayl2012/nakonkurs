@@ -1,152 +1,93 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Космос</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+  /* Существующие стили... */
 
-    body {
-      font-family: Arial, sans-serif;
-      color: #ffffff;
-      background-image: url('sky.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-position: center;
-      min-height: 100vh;
-      line-height: 1.6;
-    }
+  .logo {
+    width: 80px;
+    height: auto;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    max-width: 100%;
+  }
 
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      background: rgba(0, 0, 0, 0.6);
-      position: relative;
-    }
+  nav ul.menu {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+  }
 
+  nav ul.menu li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+
+  nav ul.menu li a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+
+  nav ul.menu li a:hover {
+    color: #ffffff;
+  }
+
+  @media (max-width: 768px) {
     header h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
+      font-size: 36px;
     }
 
     header p {
-      font-size: 20px;
-      color: #ccc;
-    }
-
-    .logo {
-      width: 80px;
-      height: auto;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 10;
-    }
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 1000;
-      padding: 10px 0;
+      font-size: 16px;
     }
 
     nav ul.menu {
-      list-style: none;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     nav ul.menu li {
-      display: inline-block;
-      margin: 0 15px;
-    }
-
-    nav ul.menu li a {
-      color: #ffcc00;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-      transition: color 0.3s ease;
-    }
-
-    nav ul.menu li a:hover {
-      color: #ffffff;
+      display: block;
+      margin: 10px 0;
     }
 
     main {
-      padding: 100px 20px 20px;
-    }
-
-    section {
-      margin-bottom: 40px;
+      padding: 80px 15px 20px;
     }
 
     section h2 {
-      font-size: 32px;
-      color: #ffcc00;
-      margin-bottom: 10px;
+      font-size: 26px;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: rgba(0, 0, 0, 0.8);
-      color: #aaa;
+    nav {
+      padding: 10px;
     }
-  </style>
-</head>
-<body>
-  <header>
-    <a href="play.html"><img src="logo.jpg" alt="Логотип Космоса" class="logo" /></a>
-    <h1>Мир Космоса</h1>
-    <p>Исследуй Вселенную с нами</p>
-  </header>
+  }
 
-  <nav class="navbar">
-    <ul class="menu">
-      <li><a href="#planets">Планеты</a></li>
-      <li><a href="#stars">Звёзды</a></li>
-      <li><a href="#galaxies">Галактики</a></li>
-      <li><a href="#contacts">Контакты</a></li>
-    </ul>
-  </nav>
+  @media (max-width: 480px) {
+    header {
+      padding: 40px 10px;
+    }
 
-  <main>
-    <section id="planets">
-      <h2>Планеты</h2>
-      <p>Планеты нашей Солнечной системы — это уникальные миры, каждый из которых имеет свои особенности. Солнце является центральным объектом нашей Солнечной системы, а планеты вращаются вокруг него. Планеты делятся на два типа: земные и газовые гиганты. Земные планеты, такие как Земля, Марс и Венера, состоят в основном из твердых веществ, в то время как газовые гиганты, такие как Юпитер и Сатурн, в основном состоят из газов и жидкостей.</p>
-      <p>Земля является единственной планетой, на которой существует жизнь, благодаря своей атмосфере и водным ресурсам. В то время как на других планетах таких условий нет, их изучение помогает нам понять, как могла бы развиваться жизнь в иных условиях. Эксплорация Марса и других планет продолжает оставаться важным направлением научных исследований, особенно с учетом амбициозных планов по колонизации Красной планеты.</p>
-    </section>
+    .logo {
+      width: 60px;
+      top: 10px;
+      left: 10px;
+    }
 
-    <section id="stars">
-      <h2>Звёзды</h2>
-      <p>Звёзды — это огромные светила, состоящие в основном из водорода и гелия, которые излучают свет и тепло благодаря термоядерным реакциям в их недрах. Наше Солнце — это типичная звезда главной последовательности, которая поддерживает жизнь на Земле, обеспечивая планету энергией.</p>
-      <p>Звёзды формируются из газовых облаков, которые сжимаются под воздействием гравитации, что приводит к возникновению термоядерных реакций. Звёзды бывают разных типов и размеров, от маленьких красных карликов до гигантских звёзд, таких как Бетельгейзе. Со временем звезда исчерпывает своё топливо, что может привести к её гибели в виде сверхновой или превращению в белый карлик или чёрную дыру.</p>
-      <p>Изучение звёзд помогает астрономам понять, как эволюционируют небесные тела и как они взаимодействуют в космосе. Это также помогает нам лучше понять будущее нашей собственной звезды, Солнца.</p>
-    </section>
+    nav ul.menu li a {
+      font-size: 16px;
+    }
 
-    <section id="galaxies">
-      <h2>Галактики</h2>
-      <p>Галактики — это гигантские системы звёзд, газа, пыли и тёмной материи, которые связаны между собой гравитацией. Наша галактика, Млечный Путь, содержит миллиарды звёзд и планет. Галактики могут быть различных типов: спиральные, эллиптические и неправильные, в зависимости от их формы и структуры.</p>
-      <p>Одной из наиболее известных галактик является Андромеда, которая является ближайшей большой галактикой к нашему Млечному Пути. Ученые предсказывают, что через несколько миллиардов лет Млечный Путь и Андромеда столкнутся, что приведет к образованию новой, более крупной галактики.</p>
-      <p>Изучение галактик и их структур позволяет астрономам понять не только эволюцию нашей Вселенной, но и то, как распространяются элементы, необходимые для жизни, и как происходят космические события, такие как слияния звёздных систем.</p>
-    </section>
-  </main>
+    header h1 {
+      font-size: 28px;
+    }
 
-  <footer id="contacts">
-    <h2>Контакты</h2>
-    <p>Для более подробной информации, сотрудничества или вопросов, свяжитесь с нами:</p>
-    <p>Email: <a href="mailto:mihail2012logvinov@gmail.com">mihail2012logvinov@gmail.com</a></p>
-    <p>Телефон: +7(495) 637-70-70</p>
-    <p><a href="info.html">О нас</a></p>
-  </footer>
-</body>
-</html>
+    section h2 {
+      font-size: 22px;
+    }
+  }
+</style>

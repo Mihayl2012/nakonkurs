@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap");
 :root {
-  --url: url(images/cola.png);
+  --url: url(cola.png);
   --left: 0px;
 }
 
@@ -12,7 +12,7 @@
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background-image: url(/sky.jpg);
+  background-image: url(sky.jpg);
   background-size: cover;
 }
 
@@ -37,7 +37,7 @@ header h1 {
 }
 
 .soda {
-  background: var(--url) var(--left), url(./images/mockup.png) 0 0;
+  background: var(--url) var(--left), url(mockup.png) 0 0;
   background-size: 100%;
   width: 20vh;
   /* height: 260px; */
@@ -45,7 +45,7 @@ header h1 {
   position: absolute;
   bottom: -2vh;
   background-blend-mode: multiply;
-  mask-image: url(./images/mockup.png);
+  mask-image: url(mockup.png);
   mask-size: auto 100%;
   transition: 0.8s;
 }
